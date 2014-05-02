@@ -75,3 +75,16 @@ def get_podcast(feed_url):
     podcast.items = items
 
     return podcast
+
+
+def get_podcasts_from_opml(opml_file):
+    podcasts = []
+
+    parsed = etree.parse(opml_file)
+    body = parsed.find('body')
+    feeds = body.find('outline')
+
+    for feed in feeds:
+        podcasts.append(feed.attrib)
+
+    return podcasts
