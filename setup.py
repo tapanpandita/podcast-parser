@@ -20,7 +20,7 @@ setup(
     # work unless the specific versions are used
     install_requires = ["lxml", ],
 
-    py_modules = ["podcastparser"],
+    packages = ["podcastparser"],
 
     zip_safe = True,
 )
